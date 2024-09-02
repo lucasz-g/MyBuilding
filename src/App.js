@@ -1,10 +1,15 @@
 import React from 'react';
-import Login from './Components/Login/Login';
+import Login from './components/login/Login.js';
+import Home from './components/home/Home.js';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <Login />
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+    </Routes>
     </div>
   );
 }

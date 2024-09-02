@@ -33,7 +33,6 @@ h2.subtitle {
     color: #333;
 }
 
-
 div.login-container {
     display: flex;
     flex-direction: column;
@@ -98,8 +97,12 @@ p.forgot-password a:hover {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    div.login-box h1 {
-        font-size: 22px;
+    h1.container-title {
+        font-size: 28px;
+    }
+
+    h2.subtitle {
+        font-size: 18px;
     }
 
     div.input-group input {
@@ -114,8 +117,12 @@ p.forgot-password a:hover {
 }
 
 @media (max-width: 480px) {
-    div.login-box h1 {
-        font-size: 20px;
+    h1.container-title {
+        font-size: 28px;
+    }
+
+    h2.subtitle {
+        font-size: 18px;
     }
 
     div.login-container {
@@ -129,7 +136,8 @@ p.forgot-password a:hover {
 
     button.login-button {
         font-size: 14px;
-        padding: 7px;
+        padding: 10px;
+        width: 80px;
     }
 
     p.forgot-password a {

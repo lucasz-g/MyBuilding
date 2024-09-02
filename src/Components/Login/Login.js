@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import './Login.css';
+import { useNavigate } from 'react-router-dom'; // Importe useNavigate
+import './login.css';
 
-const Login = () => {
+const Login = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [emailError, setEmailError] = useState('');
+    const navigate = useNavigate(); // Inicialize useNavigate
 
     const validateEmail = (email) => {
         const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return re.test(email);
     };
 
-    // Efeito para verificar o e-mail conforme o usuário digita
     useEffect(() => {
         if (email && !validateEmail(email)) {
-            setEmailError('E-mail invalido');
+            setEmailError('E-mail inválido');
         } else {
             setEmailError('');
         }
@@ -22,11 +23,12 @@ const Login = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (validateEmail(email)) {
-            // Lógica para o envio do formulário
-            console.log('Formulário enviado com sucesso!');
+        if (validateEmail(email) && password) {
+            // Simule a verificação de login (aqui você normalmente verificaria no backend)
+            // Se for bem-sucedido, navegue para o Dashboard
+            navigate('/home');
         } else {
-            console.log('Erro: E-mail inválido');
+            console.log('Erro: E-mail ou senha inválidos');
         }
     };
 
